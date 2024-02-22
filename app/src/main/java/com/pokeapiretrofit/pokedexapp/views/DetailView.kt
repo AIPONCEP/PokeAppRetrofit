@@ -69,6 +69,9 @@ fun ContenDetailView(pad: PaddingValues, viewModel: PokedexViewModel){
 @Composable
 fun getPokeDetailsView(viewModel: PokedexViewModel){
     val state= viewModel.state
+    val joinedTypes = state.types.joinToString()
+    val typeColor = getColorForType(state.types.firstOrNull() ?: "") // Obtener el color del primer tipo (si existe)
+
     Row (
         modifier= Modifier
             .padding(10.dp)
@@ -117,12 +120,12 @@ fun getPokeDetailsView(viewModel: PokedexViewModel){
                 modifier=Modifier
                     .padding(top=10.dp, bottom=10.dp)
             )
-            Text(text="Type: "+state.types,
-                color= Color.White,
+            Text(
+                text = "Type: $joinedTypes",
+                color = typeColor,
                 fontWeight = FontWeight.Bold,
                 fontSize = 20.sp,
-                modifier=Modifier
-                    .padding(top=10.dp, bottom=10.dp)
+                modifier = Modifier.padding(top = 10.dp, bottom = 10.dp)
             )
             Text(text="Weight: "+state.weight,
                 color= Color.White,
@@ -139,5 +142,15 @@ fun getPokeDetailsView(viewModel: PokedexViewModel){
                     .padding(top=10.dp, bottom=10.dp)
             )
         }
+    }
+}
+
+fun getColorForType(type: String): Color {
+    return when (type) {
+        "Fire" -> Color.Red
+        "Water" -> Color.Blue
+        "Grass" -> Color.Green
+        "Fairy" -> Color.Magenta
+        else -> Color.White // Color por defecto
     }
 }
