@@ -52,7 +52,7 @@ class PokedexViewModel @Inject constructor(private val repo: PokeApiRepository):
                     speed = result?.speed ?: 0,
                     types = result?.types ?: emptyList(),
                     weight = result?.weight ?: 0.0,
-                    height = result?.height ?: 0.0
+                    height = result?.height ?: 0.0,
                 )
             }
         }

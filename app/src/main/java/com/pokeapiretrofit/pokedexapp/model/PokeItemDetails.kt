@@ -15,7 +15,7 @@ data class PokeItemDetails(
     val speed: Int,
     val types: List<String>,
     val weight: Double,
-    val height: Double
+    val height: Double,
 )
 
 fun PokeModelDetails.toDomain(): PokeItemDetails {

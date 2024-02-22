@@ -5,6 +5,7 @@ import android.net.Uri
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -31,6 +32,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.rememberAsyncImagePainter
 import com.pokeapiretrofit.pokedexapp.model.PokeItem
+import com.pokeapiretrofit.pokedexapp.model.PokeItemDetails
 
 import com.pokeapiretrofit.pokedexapp.util.Constants.Companion.CUSTOM_BLACK
 
@@ -82,24 +84,3 @@ fun MainImage(image:String){
     )
 }
 
-@Composable
-fun MetaWebsite(url: String){
-    val context= LocalContext.current
-    val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
-    Column {
-        Text(text="METASCORE",
-            color= Color.White,
-            fontWeight = FontWeight.Bold,
-            fontSize = 30.sp,
-            modifier=Modifier
-                .padding(top=10.dp, bottom=10.dp)
-        )
-        Button(onClick={context.startActivity(intent)}, colors=ButtonDefaults.buttonColors(
-            contentColor = Color.White,
-            containerColor = Color.Gray
-            )
-        ){
-            Text(text="Sitio Web")
-        }
-    }
-}

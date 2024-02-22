@@ -9,6 +9,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import com.anluisa.gamesretrofit.navigation.NavManager
+import com.pokeapiretrofit.pokedexapp.model.PokeItemDetails
 import com.pokeapiretrofit.pokedexapp.ui.theme.PokedexAppTheme
 import com.pokeapiretrofit.pokedexapp.viewmodel.PokedexViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -18,6 +19,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val viewModel : PokedexViewModel by viewModels()
+
         setContent {
             PokedexAppTheme {
                 // A surface container using the 'background' color from the theme
