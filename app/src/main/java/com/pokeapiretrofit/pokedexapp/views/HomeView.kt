@@ -28,6 +28,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.pokeapiretrofit.pokedexapp.components.CardPokemon
 import com.pokeapiretrofit.pokedexapp.components.MainTopBar
@@ -78,16 +79,11 @@ fun ContentHomeView(viewModel: PokedexViewModel, navController: NavController) {
                 }
                 Row {
                     Text(
-                        text = item.name,
-                        fontWeight = FontWeight.ExtraBold,
+                        text = item.name+"    "+item.formatId,
+                        fontSize = 20.sp,
+                        fontWeight = FontWeight.Bold,
                         color = Color.White,
-                        modifier = Modifier.padding(start = 10.dp)
-                    )
-                    Text(
-                        text = item.formatId,
-                        fontWeight = FontWeight.ExtraBold,
-                        color = Color.White,
-                        modifier = Modifier.padding(start = 10.dp)
+                        modifier = Modifier.padding(start = 20.dp, bottom = 20.dp)
                     )
                 }
             }

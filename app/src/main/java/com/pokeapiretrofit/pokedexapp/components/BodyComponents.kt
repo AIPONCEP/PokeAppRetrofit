@@ -112,10 +112,14 @@ fun CardPokemon(pokemon: PokeItem, onClick: ()->Unit){
 
     }
 }
-
+/**
+ * Composable que muestra una imagen principal
+ */
 @Composable
 fun MainImage(image:String){
+    // Utiliza rememberCoilPainter para cargar la imagen de manera asíncrona
     val image = rememberAsyncImagePainter(model = image)
+    // Muestra la imagen utilizando la biblioteca de Coil para la carga asíncrona de imágenes
     Image (painter=image,
         contentDescription=null,
         contentScale= ContentScale.Fit,
@@ -131,7 +135,6 @@ fun PokemonWebsite(pokemonName: String){
     val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.wikidex.net/wiki/$pokemonName"))
     Button(
         onClick = {context.startActivity(intent)},
-
         modifier = Modifier
             .fillMaxWidth()
             .padding(start = 20.dp, end = 5.dp)

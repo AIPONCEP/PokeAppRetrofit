@@ -63,7 +63,6 @@ fun ContenDetailView(pad: PaddingValues, viewModel: PokedexViewModel, navControl
     }
 }
 
-
 @Composable
 fun getPokeDetailsView(viewModel: PokedexViewModel){
     val state= viewModel.state
@@ -78,66 +77,66 @@ fun getPokeDetailsView(viewModel: PokedexViewModel){
         Column {
             Text(text="Hp: "+state.hp,
                 color= Color.White,
-                fontWeight = FontWeight.Bold,
+                fontWeight = FontWeight.Normal,
                 fontSize = 20.sp,
                 modifier=Modifier
-                    .padding(top=10.dp, bottom=10.dp)
+                    .padding(top=5.dp, bottom=5.dp)
             )
             Text(text="Attack: "+state.attack,
                 color= Color.White,
-                fontWeight = FontWeight.Bold,
+                fontWeight = FontWeight.Normal,
                 fontSize = 20.sp,
                 modifier=Modifier
-                    .padding(top=10.dp, bottom=10.dp)
+                    .padding(top=5.dp, bottom=5.dp)
             )
             Text(text="Defense: "+state.defense,
                 color= Color.White,
-                fontWeight = FontWeight.Bold,
+                fontWeight = FontWeight.Normal,
                 fontSize = 20.sp,
                 modifier=Modifier
-                    .padding(top=10.dp, bottom=10.dp)
+                    .padding(top=5.dp, bottom=5.dp)
             )
             Text(text="Special Attack: "+state.specialAttack,
                 color= Color.White,
-                fontWeight = FontWeight.Bold,
+                fontWeight = FontWeight.Normal,
                 fontSize = 20.sp,
                 modifier=Modifier
-                    .padding(top=10.dp, bottom=10.dp)
+                    .padding(top=5.dp, bottom=5.dp)
             )
             Text(text="Special Defense: "+state.specialDefense,
                 color= Color.White,
-                fontWeight = FontWeight.Bold,
+                fontWeight = FontWeight.Normal,
                 fontSize = 20.sp,
                 modifier=Modifier
-                    .padding(top=10.dp, bottom=10.dp)
+                    .padding(top=5.dp, bottom=5.dp)
             )
             Text(text="Speed: "+state.speed,
                 color= Color.White,
-                fontWeight = FontWeight.Bold,
+                fontWeight = FontWeight.Normal,
                 fontSize = 20.sp,
                 modifier=Modifier
-                    .padding(top=10.dp, bottom=10.dp)
+                    .padding(top=5.dp, bottom=5.dp)
             )
             Text(
                 text = "Type: $joinedTypes",
                 color = typeColor,
-                fontWeight = FontWeight.Bold,
+                fontWeight = FontWeight.Normal,
                 fontSize = 20.sp,
-                modifier = Modifier.padding(top = 10.dp, bottom = 10.dp)
+                modifier = Modifier.padding(top = 5.dp, bottom = 5.dp)
             )
             Text(text="Weight: "+state.weight,
                 color= Color.White,
-                fontWeight = FontWeight.Bold,
+                fontWeight = FontWeight.Normal,
                 fontSize = 20.sp,
                 modifier=Modifier
-                    .padding(top=10.dp, bottom=10.dp)
+                    .padding(top=5.dp, bottom=5.dp)
             )
             Text(text="Height: "+state.height,
                 color= Color.White,
-                fontWeight = FontWeight.Bold,
+                fontWeight = FontWeight.Normal,
                 fontSize = 20.sp,
                 modifier=Modifier
-                    .padding(top=10.dp, bottom=10.dp)
+                    .padding(top=5.dp, bottom=100.dp)
             )
         }
     }

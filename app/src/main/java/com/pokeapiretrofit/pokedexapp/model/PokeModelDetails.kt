@@ -2,7 +2,16 @@ package com.pokeapiretrofit.pokedexapp.model
 
 import com.google.gson.annotations.SerializedName
 
-// https://pokeapi.co/api/v2/pokemon/25/
+
+/*
+ * Esta clase se usa para mapear los datos de la respuesta de la API de
+ * Pokémon a objetos Kotlin para facilitar su manipulación y uso en la aplicación.
+ * https://pokeapi.co/api/v2/pokemon/25/
+ */
+/**
+ * Esta clase representa los detalles de un Pokémon específico. Contiene propiedades como el ID, la altura,
+ * el nombre, las imágenes, las estadísticas, los tipos y el peso del Pokémon.
+ */
 data class PokeModelDetails(
     @SerializedName("id") val id: Int,
     @SerializedName("height") val height: Int,
@@ -13,7 +22,6 @@ data class PokeModelDetails(
     @SerializedName("weight") val weight: Int,
     // falta: debilidades -> Array
 )
-
 data class Sprites(
     @SerializedName("other") val other: Other
 )
