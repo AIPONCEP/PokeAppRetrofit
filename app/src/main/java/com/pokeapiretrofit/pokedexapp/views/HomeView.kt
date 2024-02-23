@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.windowInsetsTopHeight
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
@@ -19,17 +20,21 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.pokeapiretrofit.pokedexapp.components.CardPokemon
 import com.pokeapiretrofit.pokedexapp.components.MainTopBar
+import com.pokeapiretrofit.pokedexapp.dataStore.StoreDarkMode
 import com.pokeapiretrofit.pokedexapp.util.Constants.Companion.CUSTOM_BLACK
 import com.pokeapiretrofit.pokedexapp.viewmodel.PokedexViewModel
+import kotlinx.coroutines.launch
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
@@ -38,6 +43,7 @@ fun HomeView(viewModel: PokedexViewModel, navController: NavController) {
         topBar = {
             MainTopBar(title = "Pokedex") {}
         }
+
     ) {
         ContentHomeView(viewModel = viewModel, navController = navController)
     }

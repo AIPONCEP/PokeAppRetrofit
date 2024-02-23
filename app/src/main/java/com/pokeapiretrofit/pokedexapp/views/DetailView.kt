@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Button
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -22,6 +23,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.pokeapiretrofit.pokedexapp.components.MainImage
 import com.pokeapiretrofit.pokedexapp.components.MainTopBar
+import com.pokeapiretrofit.pokedexapp.components.PokemonWebsite
 import com.pokeapiretrofit.pokedexapp.model.PokeItemDetails
 import com.pokeapiretrofit.pokedexapp.util.Constants.Companion.CUSTOM_BLACK
 import com.pokeapiretrofit.pokedexapp.viewmodel.PokedexViewModel
@@ -35,18 +37,17 @@ fun DetailView(viewModel: PokedexViewModel, navController: NavController, id:Int
     Scaffold(
         topBar= {
             MainTopBar(title = viewModel.state.name, showBackButton = true) {
-                    navController.popBackStack()
+                navController.popBackStack()
             }
         }
     ){
-        ContenDetailView(pad = it, viewModel = viewModel)
+        ContenDetailView(pad = it, viewModel = viewModel, navController = navController)
     }
 
 }
 
-
 @Composable
-fun ContenDetailView(pad: PaddingValues, viewModel: PokedexViewModel){
+fun ContenDetailView(pad: PaddingValues, viewModel: PokedexViewModel, navController: NavController){
     val state= viewModel.state
     Column(modifier= Modifier
         .padding(pad)
@@ -54,14 +55,11 @@ fun ContenDetailView(pad: PaddingValues, viewModel: PokedexViewModel){
     ) {
         MainImage(image=state.img)
         Spacer(modifier=Modifier.height(10.dp))
-        Row(
-            horizontalArrangement = Arrangement.Start,
-            modifier = Modifier
-                .fillMaxWidth()
-               // .padding(start = 20.dp, end = 5.dp)
-        ){
-         getPokeDetailsView(viewModel)
-        }
+
+        PokemonWebsite(state.name)
+
+        Spacer(modifier=Modifier.height(10.dp))
+        getPokeDetailsView(viewModel)
     }
 }
 
