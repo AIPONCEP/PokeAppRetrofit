@@ -3,6 +3,7 @@ package com.pokeapiretrofit.pokedexapp.components
 import android.content.Intent
 import android.net.Uri
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -21,6 +22,7 @@ import androidx.compose.material3.Card
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
@@ -137,8 +139,13 @@ fun PokemonWebsite(pokemonName: String){
         onClick = {context.startActivity(intent)},
         modifier = Modifier
             .fillMaxWidth()
-            .padding(start = 20.dp, end = 5.dp)
+            .padding(start = 20.dp, end = 5.dp),
+        colors = ButtonDefaults.buttonColors(MaterialTheme.colorScheme.primary)
     ) {
-        Text("Ir a la página web")
+        Text("Ir a la página web",
+            fontSize = 20.sp,
+            fontWeight = FontWeight.Bold,
+            color = Color.White,
+            )
     }
 }

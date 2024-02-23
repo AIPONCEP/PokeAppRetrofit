@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -52,6 +53,7 @@ fun ContenDetailView(pad: PaddingValues, viewModel: PokedexViewModel, navControl
     Column(modifier= Modifier
         .padding(pad)
         .background(Color(CUSTOM_BLACK))
+        .fillMaxSize()
     ) {
         MainImage(image=state.img)
         Spacer(modifier=Modifier.height(10.dp))
@@ -136,7 +138,7 @@ fun getPokeDetailsView(viewModel: PokedexViewModel){
                 fontWeight = FontWeight.Normal,
                 fontSize = 20.sp,
                 modifier=Modifier
-                    .padding(top=5.dp, bottom=100.dp)
+                    .padding(top=5.dp, bottom=5.dp)
             )
         }
     }
